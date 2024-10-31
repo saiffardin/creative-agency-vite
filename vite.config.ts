@@ -30,44 +30,19 @@ export default defineConfig(({ mode }) => {
     define: {
       "process.env": env,
     },
-  };
-});
 
-/*
-export default defineConfig(({ mode }) => {
-  // Load env file based on the mode
-  const env = loadEnv(mode, process.cwd());
-  dotenv.config({ path: resolve(process.cwd(), `.env.${mode}`) });
-
-  return {
-    plugins: [
-      react(),
-      checker({ typescript: true }),
-      
-    ],
-    define: {
-      'process.env': env,
-    },
     resolve: {
       alias: {
-        '@api': '/src/api/',
-        '@actions': '/src/redux/actions',
-        '@containers': '/src/containers',
-        '@components': '/src/components',
-        '@constants': '/src/constants',
-        '@helpers': '/src/helpers',
-        '@utils': '/src/utils',
-        '@reducers': '/src/redux/reducers',
-        '@middlewares': '/src/redux/middlewares',
-        '@selectors': '/src/redux/selectors',
-        '@hooks': '/src/hooks',
-        '@translation': '/src/translations',
-        '@type': '/src/types',
-        '@validations': '/src/validations',
-        '@images': '/src/images',
+        "@": "/src/",
+        "@api": "/src/api",
+        "@assets": "/src/assets",
+        "@components": "/src/components",
+        "@constants": "/src/constants",
+        "@hooks": "/src/hooks",
+        "@pages": "/src/pages",
+        "@router": "/src/router",
+        "@styles": "/src/styles",
       },
     },
   };
 });
-
-*/
