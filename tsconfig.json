@@ -26,7 +26,6 @@
     "baseUrl": "./src",
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["./*"],
       "@api/*": ["api/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
