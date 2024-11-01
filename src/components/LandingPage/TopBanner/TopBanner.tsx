@@ -1,16 +1,13 @@
 import { Button } from "react-bootstrap";
-// import { useHistory } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 import imgFrame from "@assets/images/logos/Frame.png";
 import "./TopBanner.css";
 
 const TopBanner = () => {
-  // const history = useHistory();
+  const navigate = useNavigate();
 
   const hireUsClicked = () => {
-    // history.push("/login");
-
-    console.log("hireUsClicked");
+    navigate("login");
   };
 
   return (

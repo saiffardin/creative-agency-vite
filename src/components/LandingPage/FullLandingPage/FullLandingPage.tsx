@@ -1,7 +1,11 @@
+import ClientReview from "../ClientReview/ClientReview";
 import Companies from "../Companies/Companies";
+import Footer from "../Footer/Footer";
 import NavSection from "../NavSection/NavSection";
 import Services from "../Services/Services";
 import TopBanner from "../TopBanner/TopBanner";
+import WorkCarousel from "../WorkCarousel/WorkCarousel";
+
 import "./FullLandingPage.css";
 
 const FullLandingPage = () => {
@@ -13,13 +17,10 @@ const FullLandingPage = () => {
       </div>
 
       <Companies />
-
       <Services />
-      {/* 
-        <WorkCarousel></WorkCarousel>
-        <ClientReview></ClientReview>
-        <Footer></Footer> 
-      */}
+      <WorkCarousel />
+      <ClientReview />
+      <Footer />
     </main>
   );
 };

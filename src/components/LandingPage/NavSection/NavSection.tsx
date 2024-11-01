@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import mainLogo from "@assets/images/logos/logo.png";
-// import { Link } from "react-router-dom";
 
 import "./NavSection.css";
 
 const NavSection = () => {
+  const navigate = useNavigate();
+
   return (
     <main>
       <Navbar className="mx-md-5 px-md-5 " expand="lg">
@@ -35,11 +37,12 @@ const NavSection = () => {
             </Nav.Link>
           </Nav>
 
-          {/* <Link to="/login">
-            <Button className="landingPage-btn mx-5 my-2">Login</Button>
-          </Link> */}
-
-          <Button className="landingPage-btn mx-5 my-2">Login</Button>
+          <Button
+            className="landingPage-btn mx-5 my-2"
+            onClick={() => navigate("login")}
+          >
+            Login
+          </Button>
         </Navbar.Collapse>
       </Navbar>
       {/* </Container> */}

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import {useHistory} from 'react-router-dom';
-import "./Services.css";
+import { useNavigate } from "react-router-dom";
 import SingleService from "./SingleService/SingleService";
 import { ServiceType } from "./types";
 
+import "./Services.css";
+
 const Services = () => {
   // const history = useHistory();
+  const navigate = useNavigate();
+
   const [allServices, setAllServices] = useState<ServiceType[]>([]);
 
   useEffect(() => {
@@ -19,7 +22,11 @@ const Services = () => {
   }, []);
 
   const serviceClicked = (title: string | undefined) => {
-    console.log(title);
+    console.log("serviceClicked:", title);
+    // Todo :: protected route
+
+    navigate("/dashboard/order");
+
     // history.push({
     //     pathname: '/dashboard/order',
     //     service: title
