@@ -1,12 +1,13 @@
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import imgFrame from "@assets/images/logos/Frame.png";
+import { ROUTES } from "@constants/routes";
 
 const TopBanner = () => {
   const navigate = useNavigate();
 
   const hireUsClicked = () => {
-    navigate("login");
+    navigate(ROUTES.LOGIN);
   };
 
   return (

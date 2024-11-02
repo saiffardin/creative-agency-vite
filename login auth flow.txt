@@ -1,0 +1,6 @@
+isLoggedIn 	=> dashboard
+NotLoggedIn 	=> redirect to login page, can't visit dashboard
+
+onceLoggedIn 	=> can't visit login page anymore
+
+==================================

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "@components/ProductCard";
 import { useGetServices } from "@hooks/useGetServices";
+import { ROUTES } from "@constants/routes";
 
 const OurServices = () => {
   const { allServices, getAllServices } = useGetServices();
@@ -13,7 +14,7 @@ const OurServices = () => {
     console.log("serviceClicked:", title);
     // Todo :: protected route
 
-    navigate("/dashboard/order");
+    navigate(ROUTES.DASHBOARD_ORDER);
 
     // history.push({
     //     pathname: '/dashboard/order',

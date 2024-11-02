@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import mainLogo from "@assets/images/logos/logo.png";
+import { ROUTES } from "@constants/routes";
 
 const NAV_ITEMS = [
   { link: "#Home", title: "Home" },
@@ -41,7 +42,7 @@ const NavSection = () => {
 
           <Button
             className="home-page-btn mx-5 my-2"
-            onClick={() => navigate("login")}
+            onClick={() => navigate(ROUTES.LOGIN)}
           >
             Login
           </Button>

@@ -30,11 +30,12 @@
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
+      "@contexts/*": ["contexts/*"],
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@router/*": ["router/*"],
       "@styles/*": ["styles/*"],
-    
+      "@utils/*": ["utils/*"],
     }
   },
   "include": ["src"],

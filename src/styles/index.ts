@@ -7,4 +7,6 @@ import "./pages/home/WorkCarousel.css";
 import "./pages/home/ClientReview.css";
 import "./pages/home/Footer.css";
 
+import "./pages/login/index.css";
+
 import "./components/Carousel.css";

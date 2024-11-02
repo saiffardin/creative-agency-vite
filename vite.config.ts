@@ -37,10 +37,12 @@ export default defineConfig(({ mode }) => {
         "@assets": "/src/assets",
         "@components": "/src/components",
         "@constants": "/src/constants",
+        "@contexts": "/src/contexts",
         "@hooks": "/src/hooks",
         "@pages": "/src/pages",
         "@router": "/src/router",
         "@styles": "/src/styles",
+        "@utils": "/src/utils",
       },
     },
   };
