@@ -9,6 +9,14 @@
   font-weight: 600;
 }
 
+.style-third-party  {
+  border: 1px solid lightgray;
+  margin: 30px auto;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
 /* Desktop --> when the width gets larger than 768px. */
 @media only screen and (min-width: 768px) {
   .login-div {

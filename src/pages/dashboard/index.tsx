@@ -9,10 +9,10 @@ const Dashboard = () => {
       <div className="mx-2">
         <Outlet />
 
-        <button onClick={() => navigate(ROUTES.DASHBOARD_ORDER)}>
+        <button onClick={() => navigate(ROUTES.DASHBOARD_CLIENT_ORDER)}>
           Goto to Client Order
         </button>
-        <button onClick={() => navigate(ROUTES.DASHBOARD_MAKE_ADMIN)}>
+        <button onClick={() => navigate(ROUTES.DASHBOARD_ADMIN_MAKE_ADMIN)}>
           Goto to Admin MAKE_ADMIN
         </button>
       </div>

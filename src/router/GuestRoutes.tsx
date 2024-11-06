@@ -7,8 +7,8 @@ const GuestRoutes = () => {
     userInfo: { isSignedIn, isAdmin },
   } = useAppContext();
 
-  const redirectAdmin = <Navigate to={ROUTES.DASHBOARD_ADD_SERVICE} />;
-  const redirectClient = <Navigate to={ROUTES.DASHBOARD_ORDER} />;
+  const redirectAdmin = <Navigate to={ROUTES.DASHBOARD_ADMIN_ADD_SERVICE} />;
+  const redirectClient = <Navigate to={ROUTES.DASHBOARD_CLIENT_ORDER} />;
 
   if (!isSignedIn) return <Outlet />;
   else if (isAdmin) return redirectAdmin;

@@ -1,16 +1,22 @@
 import { firebaseApp } from "@utils/firebase.config";
 import { FirebaseAuthUserType } from "./types/firebase-auth-user-types";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 
 interface HookRetType {
-  firebaseGoogleAuth: () => Promise<FirebaseAuthUserType>;
+  googleLogin: () => Promise<FirebaseAuthUserType>;
+  googleLogout: () => void;
 }
 
 const useFirebaseAuth = (): HookRetType => {
   const provider = new GoogleAuthProvider();
   const auth = getAuth(firebaseApp);
 
-  const firebaseGoogleAuth = async (): Promise<FirebaseAuthUserType> => {
+  const googleLogin = async (): Promise<FirebaseAuthUserType> => {
     try {
       const result = await signInWithPopup(auth, provider);
       const { displayName, email, photoURL, uid } = result.user;
@@ -28,7 +34,15 @@ const useFirebaseAuth = (): HookRetType => {
     }
   };
 
-  return { firebaseGoogleAuth };
+  const googleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log("google log out - ERROR:", error);
+    }
+  };
+
+  return { googleLogin, googleLogout };
 };
 
 export default useFirebaseAuth;

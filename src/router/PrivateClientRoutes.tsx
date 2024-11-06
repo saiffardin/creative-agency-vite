@@ -8,7 +8,7 @@ const PrivateClientRoutes = () => {
   } = useAppContext();
 
   if (!isSignedIn) return <Navigate to={ROUTES.LOGIN} />;
-  else if (isAdmin) return <Navigate to={ROUTES.DASHBOARD_ADD_SERVICE} />;
+  else if (isAdmin) return <Navigate to={ROUTES.DASHBOARD_ADMIN_ADD_SERVICE} />;
 
   return <Outlet />;
 };

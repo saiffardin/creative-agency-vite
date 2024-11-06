@@ -10,7 +10,7 @@ const PrivateAdminRoutes = () => {
   if (!isSignedIn) return <Navigate to={ROUTES.LOGIN} />;
   else if (isAdmin) return <Outlet />;
 
-  return <Navigate to={ROUTES.DASHBOARD_ORDER} />;
+  return <Navigate to={ROUTES.DASHBOARD_CLIENT_ORDER} />;
 };
 
 export default PrivateAdminRoutes;

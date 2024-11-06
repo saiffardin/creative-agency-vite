@@ -7,19 +7,12 @@ import { ROUTES } from "@constants/routes";
 const OurServices = () => {
   const { allServices, getAllServices } = useGetServices();
 
-  // const history = useHistory();
   const navigate = useNavigate();
 
   const serviceClicked = (title: string | undefined) => {
     console.log("serviceClicked:", title);
-    // Todo :: protected route
 
-    navigate(ROUTES.DASHBOARD_ORDER);
-
-    // history.push({
-    //     pathname: '/dashboard/order',
-    //     service: title
-    // });
+    navigate(ROUTES.DASHBOARD_CLIENT_ORDER);
   };
 
   useEffect(() => {
