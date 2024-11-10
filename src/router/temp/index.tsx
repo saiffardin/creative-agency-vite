@@ -3,9 +3,13 @@ import AdminBtns from "./AdminBtns";
 import LogoutBtn from "./LogoutBtn";
 import ClientBtns from "./ClientBtns";
 
-const Temp = () => {
+interface Props {
+  className?: string;
+}
+
+const Temp = ({ className = "" }: Props) => {
   return (
-    <div>
+    <div className={className}>
       <GuestBtns />
       <AdminBtns />
       <ClientBtns />

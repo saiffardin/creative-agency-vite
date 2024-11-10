@@ -1,6 +1,7 @@
 import { ROUTES } from "@constants/routes";
+import { Navigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
-import { Navigate, Outlet } from "react-router-dom";
+import RenderGuestLayout from "./RenderGuestLayout";
 
 const GuestRoutes = () => {
   const {
@@ -10,9 +11,8 @@ const GuestRoutes = () => {
   const redirectAdmin = <Navigate to={ROUTES.DASHBOARD_ADMIN_ADD_SERVICE} />;
   const redirectClient = <Navigate to={ROUTES.DASHBOARD_CLIENT_ORDER} />;
 
-  if (!isSignedIn) return <Outlet />;
+  if (!isSignedIn) return <RenderGuestLayout />;
   else if (isAdmin) return redirectAdmin;
-
   return redirectClient;
 };
 
