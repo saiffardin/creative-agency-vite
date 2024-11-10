@@ -1,4 +1,4 @@
-import { ROUTES } from "@constants/routes";
+import { PATHS } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
 const AdminBtns = () => {
@@ -8,7 +8,7 @@ const AdminBtns = () => {
     <>
       <button
         className="btn btn-primary btn-sm m-2"
-        onClick={() => navigate(ROUTES.DASHBOARD_ADMIN_ADD_SERVICE)}
+        onClick={() => navigate(PATHS.ADMIN.ADD_SERVICE)}
       >
         Admin Add Service
       </button>

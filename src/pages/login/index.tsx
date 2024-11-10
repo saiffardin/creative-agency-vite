@@ -1,10 +1,10 @@
-import { ROUTES } from "@constants/routes";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
 import logo from "@assets/images/logos/logo.png";
 import useIsUserAdmin from "@hooks/useIsUserAdmin";
 import useFirebaseAuth from "@hooks/useFirebaseAuth";
 import google_login from "@assets/images/google_login.png";
+import { PATHS } from "@constants/paths";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Login = () => {
 
     setUserInfo({ ...authResult, isAdmin });
 
-    navigate(ROUTES.DASHBOARD_ADMIN_ADD_SERVICE);
+    navigate(PATHS.ADMIN.ADD_SERVICE);
   };
 
   return (
@@ -30,7 +30,7 @@ const Login = () => {
         width="150"
         className="d-inline-block align-top mt-3 img-fluid"
         alt="React Bootstrap logo"
-        onClick={() => navigate(ROUTES.HOME)}
+        onClick={() => navigate(PATHS.HOME)}
         style={{ cursor: "pointer" }}
       />
 

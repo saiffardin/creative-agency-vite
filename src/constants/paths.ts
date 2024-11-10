@@ -3,15 +3,15 @@ export const PATHS = {
   LOGIN: "/login",
 
   ADMIN: {
-    ADD_SERVICE: "/dashboard/addService",
-    MAKE_ADMIN: "/dashboard/makeAdmin",
-    SERVICE_LIST: "/dashboard/serviceListAdmin",
+    ADD_SERVICE: "/dashboard/add-service",
+    MAKE_ADMIN: "/dashboard/make-admin",
+    SERVICE_LIST: "/dashboard/service-list-admin",
   },
 
   CLIENT: {
     ORDER: "/dashboard/order",
     REVIEW: "/dashboard/review",
-    SERVICE_LIST: "/dashboard/serviceListClient",
+    SERVICE_LIST: "/dashboard/service-list-client",
   },
 
   NOT_FOUND: "*",

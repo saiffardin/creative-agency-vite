@@ -1,4 +1,4 @@
-import { ROUTES } from "@constants/routes";
+import { PATHS } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
 const ClientBtns = () => {
@@ -8,7 +8,7 @@ const ClientBtns = () => {
     <>
       <button
         className="btn btn-secondary btn-sm m-2"
-        onClick={() => navigate(ROUTES.DASHBOARD_CLIENT_ORDER)}
+        onClick={() => navigate(PATHS.CLIENT.ORDER)}
       >
         Client Order
       </button>

@@ -1,17 +1,17 @@
-import { ROUTES } from "@constants/routes";
 import { Navigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
-import RenderClientLayout from "./RenderClientLayout";
+import ClientLayout from "../../pages/dashboard/client";
+import { PATHS } from "@constants/paths";
 
 const PrivateClientRoutes = () => {
   const {
     userInfo: { isSignedIn, isAdmin },
   } = useAppContext();
 
-  if (!isSignedIn) return <Navigate to={ROUTES.LOGIN} />;
-  else if (isAdmin) return <Navigate to={ROUTES.DASHBOARD_ADMIN_ADD_SERVICE} />;
+  if (!isSignedIn) return <Navigate to={PATHS.LOGIN} />;
+  else if (isAdmin) return <Navigate to={PATHS.ADMIN.ADD_SERVICE} />;
 
-  return <RenderClientLayout />;
+  return <ClientLayout />;
 };
 
 export default PrivateClientRoutes;

@@ -10,3 +10,4 @@ import "./pages/home/Footer.css";
 import "./pages/login/index.css";
 
 import "./components/Carousel.css";
+import "./components/Sidebar.css";

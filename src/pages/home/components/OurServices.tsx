@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "@components/ProductCard";
 import { useGetServices } from "@hooks/useGetServices";
-import { ROUTES } from "@constants/routes";
+import { PATHS } from "@constants/paths";
 
 const OurServices = () => {
   const { allServices, getAllServices } = useGetServices();
@@ -12,7 +12,7 @@ const OurServices = () => {
   const serviceClicked = (title: string | undefined) => {
     console.log("serviceClicked:", title);
 
-    navigate(ROUTES.DASHBOARD_CLIENT_ORDER);
+    navigate(PATHS.CLIENT.ORDER);
   };
 
   useEffect(() => {

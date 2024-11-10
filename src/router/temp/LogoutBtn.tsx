@@ -1,7 +1,7 @@
-import { ROUTES } from "@constants/routes";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
 import useFirebaseAuth from "@hooks/useFirebaseAuth";
+import { PATHS } from "@constants/paths";
 
 const LogoutBtn = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const LogoutBtn = () => {
         onClick={() => {
           googleLogout();
           setUserInfo({});
-          navigate(ROUTES.LOGIN);
+          navigate(PATHS.LOGIN);
         }}
       >
         Log Out

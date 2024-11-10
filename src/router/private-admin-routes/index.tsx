@@ -1,17 +1,17 @@
-import { ROUTES } from "@constants/routes";
 import { useAppContext } from "@contexts/index";
 import { Navigate } from "react-router-dom";
-import RenderAdminLayout from "./RenderAdminLayout";
+import AdminLayout from "../../pages/dashboard/admin";
+import { PATHS } from "@constants/paths";
 
 const PrivateAdminRoutes = () => {
   const {
     userInfo: { isSignedIn, isAdmin },
   } = useAppContext();
 
-  if (!isSignedIn) return <Navigate to={ROUTES.LOGIN} />;
-  else if (isAdmin) return <RenderAdminLayout />;
+  if (!isSignedIn) return <Navigate to={PATHS.LOGIN} />;
+  else if (isAdmin) return <AdminLayout />;
 
-  return <Navigate to={ROUTES.DASHBOARD_CLIENT_ORDER} />;
+  return <Navigate to={PATHS.CLIENT.ORDER} />;
 };
 
 export default PrivateAdminRoutes;
