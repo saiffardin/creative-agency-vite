@@ -2,7 +2,7 @@ import { useAppContext } from "@contexts/index";
 import { Navigate } from "react-router-dom";
 import { PATHS } from "@constants/paths";
 import Dashboard from "@pages/dashboard";
-import { sidebarAdmin } from "@pages/dashboard/admin/constants/sidebar-admin";
+import { sidebarAdmin } from "@constants/sidebar-admin";
 
 const PrivateAdminRoutes = () => {
   const {

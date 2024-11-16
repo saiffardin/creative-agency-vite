@@ -5,7 +5,7 @@ import { Button, Form } from "react-bootstrap";
 import FormInput from "@components/FormInput";
 import { useAddService } from "@hooks/useAddService";
 import { PostService } from "@hooks/types/add-service-types";
-import { SERVICE_INFO_FORM } from "./constants/service-info-form";
+import { SERVICE_INFO_FORM } from "./constants";
 import { OnChangeEvent, OnBlurEvent, OnSubmitEvent } from "types/event-types";
 
 type ServiceInfoType = Omit<PostService, "file">;

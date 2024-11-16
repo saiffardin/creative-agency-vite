@@ -6,13 +6,11 @@ import { OrderType } from "./types/order-types";
 const { GET_ALL_ORDERS } = URLS;
 
 interface HookRetType {
-  clients: OrderType[];
-  orderIds: string[];
+  orders: OrderType[];
 }
 
 export const useGetOrders = (): HookRetType => {
-  const [clients, setClients] = useState<OrderType[]>([]);
-  const [orderIds, setOrderIds] = useState<string[]>([]);
+  const [orders, setOrders] = useState<OrderType[]>([]);
 
   useEffect(() => {
     getAllOrders();
@@ -24,20 +22,17 @@ export const useGetOrders = (): HookRetType => {
         url: GET_ALL_ORDERS,
       });
 
-      const onlyIDs = data.map((item) => item._id);
       const mappedClientData = data.map((item, indx) => ({
         ...item,
         index: indx + 1,
       }));
 
-      setClients(mappedClientData);
-      setOrderIds(onlyIDs);
+      setOrders(mappedClientData);
     } catch (error) {
       console.error(error);
-      setClients([]);
-      setOrderIds([]);
+      setOrders([]);
     }
   };
 
-  return { clients, orderIds };
+  return { orders };
 };

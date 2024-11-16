@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
 import { PATHS } from "@constants/paths";
 import Dashboard from "@pages/dashboard";
-import { sidebarClient } from "@pages/dashboard/client/constants";
+import { sidebarClient } from "@constants/sidebar-client";
 
 const PrivateClientRoutes = () => {
   const {

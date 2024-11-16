@@ -16,7 +16,7 @@ const DashNav = ({ title, userName }: Props) => {
 
   return (
     <>
-      <nav className="border rounded bg-body-tertiary d-none d-lg-flex justify-content-between p-md-3 mx-md-2">
+      <nav className="border rounded bg-body-tertiary d-none d-lg-flex justify-content-between p-md-3">
         <h5 className="title my-auto">{title}</h5>
         <div className="d-flex gap-2">
           <h5 className="my-auto">{userName}</h5>
