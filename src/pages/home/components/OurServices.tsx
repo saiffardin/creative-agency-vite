@@ -9,9 +9,7 @@ const OurServices = () => {
 
   const navigate = useNavigate();
 
-  const serviceClicked = (title: string | undefined) => {
-    console.log("serviceClicked:", title);
-
+  const serviceClicked = () => {
     navigate(PATHS.CLIENT.ORDER);
   };
 
@@ -37,7 +35,7 @@ const OurServices = () => {
             <ProductCard
               key={indx}
               containerClassNames="single-service-div"
-              onCardClick={() => serviceClicked(service.title)}
+              onCardClick={serviceClicked}
               imgUrl={`data:image/png;base64,${service.img.imgType}`}
               imgClassNames="comp-img"
               title={service.title}

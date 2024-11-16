@@ -20,7 +20,7 @@ export const useGetReviews = (): HookRetType => {
       });
       setAllReviews(response || []);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setAllReviews([]);
     }
   };

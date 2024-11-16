@@ -9,7 +9,7 @@ import {
 
 interface HookRetType {
   googleLogin: () => Promise<FirebaseAuthUserType>;
-  googleLogout: () => void;
+  googleLogout: () => Promise<void>;
 }
 
 const useFirebaseAuth = (): HookRetType => {
@@ -37,8 +37,10 @@ const useFirebaseAuth = (): HookRetType => {
   const googleLogout = async () => {
     try {
       await signOut(auth);
+
+      return Promise.resolve();
     } catch (error) {
-      console.log("google log out - ERROR:", error);
+      console.error("google log out - ERROR:", error);
     }
   };
 

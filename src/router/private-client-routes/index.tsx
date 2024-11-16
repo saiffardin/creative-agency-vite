@@ -1,7 +1,8 @@
 import { Navigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
-import ClientLayout from "../../pages/dashboard/client";
 import { PATHS } from "@constants/paths";
+import Dashboard from "@pages/dashboard";
+import { sidebarClient } from "@pages/dashboard/client/constants";
 
 const PrivateClientRoutes = () => {
   const {
@@ -11,7 +12,7 @@ const PrivateClientRoutes = () => {
   if (!isSignedIn) return <Navigate to={PATHS.LOGIN} />;
   else if (isAdmin) return <Navigate to={PATHS.ADMIN.ADD_SERVICE} />;
 
-  return <ClientLayout />;
+  return <Dashboard sidebarItems={sidebarClient} />;
 };
 
 export default PrivateClientRoutes;

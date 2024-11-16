@@ -1,10 +1,10 @@
+import { PATHS } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "@contexts/index";
 import logo from "@assets/images/logos/logo.png";
 import useIsUserAdmin from "@hooks/useIsUserAdmin";
 import useFirebaseAuth from "@hooks/useFirebaseAuth";
 import google_login from "@assets/images/google_login.png";
-import { PATHS } from "@constants/paths";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,8 +13,6 @@ const Login = () => {
   const { findIsUserAdmin } = useIsUserAdmin();
 
   const handleLogin = async () => {
-    console.log("Google");
-
     const authResult = await googleLogin();
     const isAdmin = await findIsUserAdmin(authResult.email);
 

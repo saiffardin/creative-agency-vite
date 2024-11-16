@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { GET } from "@api/GET";
+import { useState } from "react";
 import { URLS } from "@constants/urls";
 import { ServiceType } from "./types/service-types";
 
@@ -20,7 +20,7 @@ export const useGetServices = (): HookRetType => {
       });
       setAllServices(response || []);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setAllServices([]);
     }
   };

@@ -1,10 +1,7 @@
-import { useState } from "react";
-import logo from "@assets/images/logos/logo.png";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-
-// import "./Sidebar.css";
+import logo from "@assets/images/logos/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface SidebarItem {
   id: number;
@@ -14,31 +11,31 @@ export interface SidebarItem {
 }
 interface Props {
   sidebarItems: SidebarItem[];
+  activeItem: SidebarItem;
+  setActiveItem: React.Dispatch<React.SetStateAction<SidebarItem>>;
 }
 
-const Sidebar = ({ sidebarItems }: Props) => {
-  const [activeItem, setActiveItem] = useState(sidebarItems?.[0]?.id);
+const Sidebar = ({ sidebarItems, activeItem, setActiveItem }: Props) => {
   const navigate = useNavigate();
 
   const handleItemClick = (item: SidebarItem) => {
-    console.log("item:", item);
-    setActiveItem(item.id);
+    setActiveItem(item);
     navigate(item.url);
   };
 
   return (
-    <div className="sidebar-wrapper container-fluid row border border-2 border-success">
+    <div className="sidebar-wrapper container-fluid row">
       <div className="px-sm-2 px-0">
         <div className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-dark min-vh-100">
           <div className="d-none d-sm-flex justify-content-center mb-sm-3">
             <img width="150" className="img-fluid" src={logo} alt="logo" />
           </div>
 
-          <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
+          <ul className="nav nav-pills flex-column mt-md-2 mb-sm-auto mb-0 align-items-center align-items-sm-start">
             {sidebarItems?.map((item) => (
               <li
                 className={`sidebar-list-item rounded-3 align-middle px-2 py-1 my-2 ${
-                  item.id === activeItem && "bg-success-subtle"
+                  item.id === activeItem.id && "bg-success-subtle"
                 }`}
                 onClick={() => handleItemClick({ ...item })}
                 title={item.title}
@@ -49,13 +46,13 @@ const Sidebar = ({ sidebarItems }: Props) => {
                   height={18}
                   icon={item.icon}
                   className={`mx-2 mx-sm-0 ${
-                    item.id === activeItem && "text-success"
+                    item.id === activeItem.id && "text-success"
                   }`}
                 />
 
                 <span
                   className={`ms-1 d-none d-sm-inline ${
-                    item.id === activeItem && "text-success"
+                    item.id === activeItem.id && "text-success"
                   }`}
                 >
                   {item.title}

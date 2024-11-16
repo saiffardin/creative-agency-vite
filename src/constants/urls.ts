@@ -4,4 +4,7 @@ export const URLS = {
   GET_ALL_SERVICES: BASE_URL + "/loadAll",
   GET_ALL_REVIEWS: BASE_URL + "/loadAllReviews",
   FIND_ADMIN: (email: string) => `${BASE_URL}/findAdmin/${email}`,
+  POST_SERVICE: BASE_URL + "/addService",
+  GET_ALL_ORDERS: BASE_URL + "/loadAllOrders",
+  UPDATE_ORDER_BY_ID: (id: string) => `${BASE_URL}/updateStatus/${id}`,
 };

@@ -1,7 +1,8 @@
 import { useAppContext } from "@contexts/index";
 import { Navigate } from "react-router-dom";
-import AdminLayout from "../../pages/dashboard/admin";
 import { PATHS } from "@constants/paths";
+import Dashboard from "@pages/dashboard";
+import { sidebarAdmin } from "@pages/dashboard/admin/constants/sidebar-admin";
 
 const PrivateAdminRoutes = () => {
   const {
@@ -9,7 +10,7 @@ const PrivateAdminRoutes = () => {
   } = useAppContext();
 
   if (!isSignedIn) return <Navigate to={PATHS.LOGIN} />;
-  else if (isAdmin) return <AdminLayout />;
+  else if (isAdmin) return <Dashboard sidebarItems={sidebarAdmin} />;
 
   return <Navigate to={PATHS.CLIENT.ORDER} />;
 };
