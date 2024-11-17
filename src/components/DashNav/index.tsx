@@ -16,7 +16,7 @@ const DashNav = ({ title, userName }: Props) => {
 
   return (
     <>
-      <nav className="border rounded bg-body-tertiary d-none d-lg-flex justify-content-between p-md-3">
+      <nav className="bg-white d-none d-lg-flex justify-content-between p-md-3">
         <h5 className="title my-auto">{title}</h5>
         <div className="d-flex gap-2">
           <h5 className="my-auto">{userName}</h5>
@@ -24,7 +24,7 @@ const DashNav = ({ title, userName }: Props) => {
         </div>
       </nav>
 
-      <Navbar expand="lg">
+      <Navbar expand="lg" className="bg-white">
         <Container>
           <Navbar.Brand className="d-lg-none">{title}</Navbar.Brand>
           <Navbar.Toggle onClick={handleCanvasShow} />

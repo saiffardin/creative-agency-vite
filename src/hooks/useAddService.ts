@@ -28,7 +28,7 @@ export const useAddService = (): HookRetType => {
     formData.append("img", file);
 
     try {
-      await POST({ url: POST_SERVICE, body: formData });
+      await POST({ url: POST_SERVICE, body: formData, isFormData: true });
 
       setLoading(false);
       setSuccess(true);

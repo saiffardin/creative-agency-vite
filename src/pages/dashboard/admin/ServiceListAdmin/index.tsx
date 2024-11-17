@@ -20,7 +20,9 @@ const ServiceListAdmin = () => {
   };
 
   return (
-    <Table rows={orders} columns={getOrderTableColumns({ handleChange })} />
+    <div className="admin-service-list">
+      <Table rows={orders} columns={getOrderTableColumns({ handleChange })} />
+    </div>
   );
 };
 

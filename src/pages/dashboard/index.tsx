@@ -20,12 +20,15 @@ const Dashboard = ({ sidebarItems }: Props) => {
         setActiveItem={setActiveItem}
       />
 
-      <div className="w-100">
+      <div className="w-100 dashboard-div">
         <DashNav
           title={activeItem.title}
           userName={userInfo.displayName || ""}
         />
-        <Outlet />
+
+        <div className="my-3 mx-4">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

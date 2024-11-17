@@ -7,4 +7,5 @@ export const URLS = {
   POST_SERVICE: BASE_URL + "/addService",
   GET_ALL_ORDERS: BASE_URL + "/loadAllOrders",
   UPDATE_ORDER_BY_ID: (id: string) => `${BASE_URL}/updateStatus/${id}`,
+  ADD_ADMIN: BASE_URL + "/addAdmin",
 };

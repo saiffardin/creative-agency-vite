@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { Button, Form } from "react-bootstrap";
-
 import FormInput from "@components/FormInput";
+import { Button, Form } from "react-bootstrap";
+import { SERVICE_INFO_FORM } from "./constants";
 import { useAddService } from "@hooks/useAddService";
 import { PostService } from "@hooks/types/add-service-types";
-import { SERVICE_INFO_FORM } from "./constants";
 import { OnChangeEvent, OnBlurEvent, OnSubmitEvent } from "types/event-types";
 
 type ServiceInfoType = Omit<PostService, "file">;
@@ -18,7 +17,7 @@ const AddService = () => {
   });
   const [file, setFile] = useState<File | null>(null);
 
-  const { postNewService } = useAddService();
+  const { postNewService, loading } = useAddService();
 
   const handleSubmit = async (event: OnSubmitEvent) => {
     event.preventDefault();
@@ -100,7 +99,11 @@ const AddService = () => {
         </div>
 
         <div className="d-flex ms-5 pe-2 mt-2 justify-content-end">
-          <Button className="btn-success px-4 my-2 ms-5 " type="submit">
+          <Button
+            className="btn-success px-4 my-2 ms-5"
+            disabled={loading}
+            type="submit"
+          >
             Submit
           </Button>
         </div>
