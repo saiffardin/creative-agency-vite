@@ -1,4 +1,4 @@
-import { ORDER_STATUS } from "../constants";
+import { ORDER_STATUS } from "@constants/order-status";
 
 export const getTextClassByOrderStatus = (currOrderStatus: string) => {
   switch (currOrderStatus) {

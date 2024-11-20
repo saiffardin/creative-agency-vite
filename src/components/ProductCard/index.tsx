@@ -4,12 +4,12 @@ interface Props {
   imgClassNames?: string;
   title?: string;
   description?: string;
-  onCardClick: () => void;
+  onCardClick?: () => void;
 }
 
 const ProductCard = ({
   imgUrl,
-  onCardClick,
+  onCardClick = () => null,
   title,
   description,
   imgClassNames = "",

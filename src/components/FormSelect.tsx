@@ -1,35 +1,27 @@
 import React from "react";
 import { Col, Form, Row } from "react-bootstrap";
 
-export type onBlurType = React.FocusEventHandler<HTMLInputElement>;
-export type onChangeType = React.ChangeEventHandler<HTMLInputElement>;
+export type onChangeFormSelectType =
+  React.ChangeEventHandler<HTMLSelectElement>;
 
 interface Props {
   label: string;
-  type?: string;
-  as?: "input" | "textarea";
-  placeholder?: string;
+  items: string[] | number[];
   name: string;
   feedbackTxt?: string;
-  defaultValue?: string;
   required?: boolean;
-  disabled?: boolean;
-  handleBlur?: onBlurType;
-  handleFileChange?: onChangeType;
+  onChange?: onChangeFormSelectType;
+  defaultValue?: string;
 }
 
-const FormInput = ({
+const FormSelect = ({
   label,
-  type = "",
-  as = "input",
-  placeholder = "",
+  items,
   name,
   feedbackTxt,
   required,
-  defaultValue,
-  disabled = false,
-  handleBlur,
-  handleFileChange,
+  onChange,
+  defaultValue = "Select",
 }: Props) => {
   return (
     <Row className="mb-3">
@@ -39,18 +31,22 @@ const FormInput = ({
           {required ? <span className="text-danger fw-normal">*</span> : null}
         </Form.Label>
 
-        <Form.Control
+        <Form.Select
           className="mt-0"
           required={required}
-          type={type}
-          as={as}
-          placeholder={placeholder}
+          as="select"
           name={name}
-          onChange={handleFileChange}
-          onBlur={handleBlur}
+          onChange={onChange}
           defaultValue={defaultValue}
-          disabled={disabled}
-        />
+        >
+          <option disabled selected>
+            {defaultValue}
+          </option>
+
+          {items?.map((item) => (
+            <option>{item}</option>
+          ))}
+        </Form.Select>
 
         {feedbackTxt ? (
           <Form.Control.Feedback>{feedbackTxt}</Form.Control.Feedback>
@@ -60,4 +56,4 @@ const FormInput = ({
   );
 };
 
-export default FormInput;
+export default FormSelect;

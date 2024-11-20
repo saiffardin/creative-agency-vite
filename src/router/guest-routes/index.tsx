@@ -1,7 +1,6 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useAppContext } from "@contexts/index";
 import { PATHS } from "@constants/paths";
-import Temp from "@router/temp";
+import { useAppContext } from "@contexts/index";
+import { Navigate, Outlet } from "react-router-dom";
 
 const GuestRoutes = () => {
   const {
@@ -11,14 +10,7 @@ const GuestRoutes = () => {
   const redirectAdmin = <Navigate to={PATHS.ADMIN.ADD_SERVICE} />;
   const redirectClient = <Navigate to={PATHS.CLIENT.ORDER} />;
 
-  if (!isSignedIn)
-    return (
-      <>
-        <Temp className="m-2 border border-2 border-success" />
-
-        <Outlet />
-      </>
-    );
+  if (!isSignedIn) return <Outlet />;
   else if (isAdmin) return redirectAdmin;
   return redirectClient;
 };

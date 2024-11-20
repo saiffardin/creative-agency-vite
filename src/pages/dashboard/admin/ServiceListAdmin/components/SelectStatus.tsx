@@ -1,7 +1,7 @@
-import { ORDER_STATUS } from "../constants";
 import { OrderType } from "@hooks/types/order-types";
-import { getTextClassByOrderStatus } from "../helper/get-text-class-by-order-status";
 import { StatusHandlerType } from "types/event-types";
+import { ORDER_STATUS } from "@constants/order-status";
+import { getTextClassByOrderStatus } from "../helper/get-text-class-by-order-status";
 
 interface Props {
   client: OrderType;
